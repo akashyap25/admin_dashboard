@@ -1,4 +1,4 @@
-// src/App.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -61,17 +61,13 @@ function App() {
 
   const handleEdit = (id) => {
     if (editingRows.includes(id)) {
-      // Save the changes and exit edit mode
       setEditingRows(editingRows.filter(rowId => rowId !== id));
-      // You may want to send the edited data to a server or update your local state
     } else {
-      // Enter edit mode for the specified row
       setEditingRows([...editingRows, id]);
     }
   };
 
   const handleEditInputChange = (e, id) => {
-    // Update the local state with the edited values
     const updatedUsers = users.map(user =>
       user.id === id
         ? { ...user, [e.target.name]: e.target.value }
